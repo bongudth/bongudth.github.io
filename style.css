@@ -1,5 +1,8 @@
 body {
-  background-color: #FFE3E9;
+  background-color: #ffe3e9;
+  color: #404646;
+  line-height: 1.45em;
+  font-size: 14.5px;
 }
 
 .social {
@@ -70,4 +73,161 @@ body {
 .twitter:focus {
   color: #55acee;
   box-shadow: 0 0 24px 0 #55acee;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.gallery {
+  margin: 1.6rem 0.8rem;
+}
+
+.grid-container {
+  margin: auto;
+  display: grid;
+  grid-gap: 1.1312rem;
+  grid-template-columns: repeat(auto-fit, 12.8rem);
+  grid-auto-rows: 12.8rem;
+  grid-auto-flow: dense;
+  justify-content: center;
+  max-width: 75em;
+}
+
+.card {
+  grid-row: auto / span 1;
+  grid-column: auto / span 1;
+  background-color: white;
+  box-shadow: 1px 3px 3px rgba(0, 10, 20, 0.06);
+}
+
+.card__image {
+  height: 100%;
+  max-height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.card__image img {
+  height: 100%;
+  min-height: 100%;
+  max-height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card__side-by-side {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.card__side-by-side--m {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.card__side-by-side--m img {
+  min-height: auto;
+}
+
+.card__content {
+  padding: 1.6rem;
+}
+
+.card__button {
+  margin: 1.6rem 0;
+  text-align: center;
+  padding: 0.8rem 1.6rem;
+  background: none;
+  border: 0.5px solid #777;
+  border-radius: 2px;
+}
+
+.card__button:hover {
+  border-color: #d099a0;
+}
+
+.card--featured {
+  grid-row: auto / span 3;
+  grid-column: auto / span 2;
+}
+
+.card--2x {
+  grid-row: auto / span 2;
+  grid-column: auto / span 2;
+}
+
+.card--vertical {
+  grid-row: auto / span 2;
+}
+
+.card--horizontal {
+  grid-column: auto / span 2;
+}
+
+.card--frameless {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.big-script {
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 4.5em;
+  line-height: 1.2em;
+  text-align: center;
+  font-family: "Dancing Script", cursive;
+  padding: 3.2rem;
+}
+
+.big-script p {
+  margin: 0;
+}
+
+.small-script {
+  font-family: "Sofia", cursive;
+  padding: 1.6rem;
+}
+
+@media (max-width: 413px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+  }
+
+  .card {
+    min-height: 12.8rem;
+  }
+}
+
+@media (min-width: 627px) {
+  .grid-container {
+    grid-gap: 1.6rem;
+  }
+
+  .card__side-by-side--m {
+    flex-flow: row nowrap;
+  }
+
+  .card__side-by-side--m img {
+    min-height: 100%;
+  }
+
+  .card--featured {
+    grid-row: auto / span 2;
+    grid-column: -1;
+  }
+}
+
+@media (min-width: 836px) {
+  .padding-large--l {
+    padding: 3.2rem;
+  }
 }
