@@ -65,9 +65,9 @@ span:before {
   height: 2rem;
   float: left;
   margin: 0.5rem 1rem 0.5rem 0;
-  color: #4a5366;
+  color: #c06e6b;
   border: 0.125rem solid #f3f3f3;
-  box-shadow: 0 0 8px 0 rgba(50, 50, 50, 0.15);
+  box-shadow: 0 0 8px 0 eb7e7b;
   border-radius: 50%;
   transition: 250ms;
   background-color: #f3f3f3;
