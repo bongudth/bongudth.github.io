@@ -5,6 +5,11 @@ body {
   text-align: center;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+/* START AVATAR */
 .avatar {
   margin-top: 100px;
   transition: all 0.8s;
@@ -49,7 +54,9 @@ span {
 span:before {
   content: " - ";
 }
+/* END AVATAR */
 
+/* START SOCIAL */
 .social {
   width: 100%;
   height: 100px;
@@ -119,11 +126,9 @@ span:before {
   color: #55acee;
   box-shadow: 0 0 24px 0 #55acee;
 }
+/* END SOCIAL */
 
-* {
-  box-sizing: border-box;
-}
-
+/* START GALLERY */
 .gallery {
   margin: 3.2rem 0.8rem;
 }
@@ -262,3 +267,4 @@ span:before {
     padding: 3.2rem;
   }
 }
+/* END GALLERY */
