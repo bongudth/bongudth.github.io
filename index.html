@@ -11,8 +11,7 @@
   <link rel="shortcut icon" href="favicon.ico" type="image/icon">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Sofia&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Handlee&family=Sofia&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -21,7 +20,7 @@
     <figure>
       <img src="./images/bongudth.jpg" alt="bongudth">
       <figcaption>
-        Bongudth<span>Dallas</span>
+        Bongudth
       </figcaption>
     </figure>
   </div>
@@ -164,6 +163,211 @@
     </div>
   </div>
   <!-- END GALLERY -->
+
+  <!-- START SKILL -->
+  <div class="container">
+    <div class="header">
+      <div class="title">Skills</div>
+    </div>
+    <div class="indicators">
+      <div id="i1">
+        <div class="navi-indicator" id="ni1"></div>
+      </div>
+      <div id="i2">
+        <div class="navi-indicator" id="ni2"></div>
+      </div>
+      <div id="i3">
+        <div class="navi-indicator" id="ni3"></div>
+      </div>
+      <div id="i4">
+        <div class="navi-indicator" id="ni4"></div>
+      </div>
+    </div>
+    <div class="navi">
+      <div class="navi-item1">
+        <button class="nav-button" id="frontendbutton">
+          <div class="navi-icon"><i class="fas fa-code"></i></div>
+          <div class="navi-text">Frontend</div>
+        </button>
+      </div>
+      <div class="navi-item2">
+        <button class="nav-button" id="loadingbutton">
+          <div class="navi-icon"><i class="fab fa-cuttlefish"></i></div>
+          <div class="navi-text">Loading</div>
+        </button>
+      </div>
+      <div class="navi-item3">
+        <button class="nav-button" id="translatebutton">
+          <div class="navi-icon"><i class="fas fa-comment-dots"></i></div>
+          <div class="navi-text">Translate</div>
+        </button>
+      </div>
+      <div class="navi-item4">
+        <button class="nav-button" id="gamebutton">
+          <div class="navi-icon"><i class="fab fa-keybase"></i></div>
+          <div class="navi-text">Game</div>
+        </button>
+      </div>
+    </div>
+    <div class="menu">
+      <div class="menu-separator">Separator</div>
+      <div class="text-item">
+        <div class="text-item-name">Text</div>
+        <div class="text-item-description">Text tada tada</div>
+        <div class="text-item-year">2105</div>
+      </div>
+      <div class="menu-separator">Separator</div>
+      <div class="link-item">
+        <a href="http://loading.vndsc.com/" class="link-item-name" target="_blank">
+          Link
+        </a>
+      </div>
+      <div class="menu-separator">Separator</div>
+      <div class="image-item">
+        <div class="image-item-name">Image</div>
+        <div class="image-item-description">Image tada tada</div>
+        <div class="image-item-image">2001</div>
+      </div>
+    </div>
+  </div>
+  <!-- END SKILL -->
+
+  <script>
+    // START SKILL
+    const frontend = JSON.parse(
+      "[" +
+      '{ "type":"text", "name":"DUT", "description":"Sophomore in Information of Technology at Danang University of Science and Technology", "year":"2019-2023" },' +
+      '{ "type":"text", "name":"DSC - DUT", "description":"Frontend Intern at Developer Student Club - Danang University of Science and Technology", "year":"2020-2021" } ]'
+    );
+    const loading = JSON.parse(
+      "[" +
+      '{ "type":"link", "name":"DSC Loading Spinner", "href":"", "year":"" } ]'
+    );
+    const translate = JSON.parse(
+      "[" +
+      '{ "type":"link", "name":"SLIDEV", "description":"translate document into Vietnamese", "year":"2021" },' +
+      '{ "type":"link", "name":"OBSIDIAN", "description":"translate document into Vietnamese", "year":"2021" } ]'
+    );
+    const game = JSON.parse(
+      "[" +
+      '{ "type":"image", "name":"VALOR OF ARENA", "description":"Top Ishar 22th in the central of Vietnam", "image":"2020" } ]'
+    );
+
+    let sl = 0;
+
+    let frontendbutton = document.getElementById("frontendbutton");
+    let loadingbutton = document.getElementById("loadingbutton");
+    let translatebutton = document.getElementById("translatebutton");
+    let gamebutton = document.getElementById("gamebutton");
+
+    let ni1 = document.getElementById("ni1");
+    let ni2 = document.getElementById("ni2");
+    let ni3 = document.getElementById("ni3");
+    let ni4 = document.getElementById("ni4");
+
+    frontendbutton.addEventListener("click", (e) => {
+      setIndicator(0);
+      populateItems(frontend);
+    });
+    loadingbutton.addEventListener("click", (e) => {
+      setIndicator(1);
+      populateItems(loading);
+    });
+    translatebutton.addEventListener("click", (e) => {
+      setIndicator(2);
+      populateItems(translate);
+    });
+    gamebutton.addEventListener("click", (e) => {
+      setIndicator(3);
+      populateItems(game);
+    });
+
+    function populateItems(items) {
+      let menu = document.querySelector(".menu");
+      menu.innerHTML = "";
+      for (i = 0; i < items.length; i++) {
+        if (items[i].type === "text") {
+          let textitem = document.createElement("div");
+          let textitemname = document.createElement("div");
+          let textitemdesc = document.createElement("div");
+          let textitemyear = document.createElement("div");
+
+          textitem.setAttribute("class", "text-item");
+          textitemname.setAttribute("class", "text-item-name");
+          textitemdesc.setAttribute("class", "text-item-description");
+          textitemyear.setAttribute("class", "text-item-year");
+
+          textitemname.innerHTML = items[i].name;
+          textitemdesc.innerHTML = items[i].description;
+          textitemyear.innerHTML = items[i].year;
+
+          textitem.appendChild(textitemname);
+          textitem.appendChild(textitemdesc);
+          textitem.appendChild(textitemyear);
+          menu.appendChild(textitem);
+        }
+        if (items[i].type === "link") {
+          let linkitem = document.createElement("div");
+          let linkitemname = document.createElement("a");
+
+          linkitem.setAttribute("class", "link-item");
+          linkitemname.setAttribute("class", "link-item-name");
+
+          linkitemname.innerHTML = items[i].name;
+
+          linkitem.appendChild(linkitemname);
+          menu.appendChild(linkitem);
+        }
+        if (items[i].type === "image") {
+          let imageitem = document.createElement("div");
+          let imageitemname = document.createElement("div");
+          let imageitemdesc = document.createElement("div");
+          let imageitemimage = document.createElement("div");
+
+          imageitem.setAttribute("class", "image-item");
+          imageitemname.setAttribute("class", "image-item-name");
+          imageitemdesc.setAttribute("class", "image-item-description");
+          imageitemimage.setAttribute("class", "image-item-image");
+
+          imageitemname.innerHTML = items[i].name;
+          imageitemdesc.innerHTML = items[i].description;
+          imageitemimage.innerHTML = items[i].image;
+
+          imageitem.appendChild(imageitemdesc);
+          imageitem.appendChild(imageitemname);
+          imageitem.appendChild(imageitemimage);
+          menu.appendChild(imageitem);
+        }
+      }
+    }
+    function setIndicator(sel) {
+      sl = sel;
+      let vp = "";
+      if (window.innerWidth < 800) {
+        vp = "60px";
+      } else {
+        vp = "85%";
+      }
+      let elems = [ni1, ni2, ni3, ni4];
+      for (i = 0; i < elems.length; i++) {
+        if (i === sel) {
+          elems[i].style.width = vp;
+          elems[i].style.boxShadow = "2px 2px 10px 2px var(--icolor" + (i + 1) + ")";
+        } else {
+          elems[i].style.width = "0";
+          elems[i].style.boxShadow = "none";
+        }
+      }
+    }
+
+    window.addEventListener("resize", (e) => {
+      setIndicator(sl);
+    });
+
+    setIndicator(sl);
+    populateItems(frontend);
+    // END SKILL
+  </script>
 </body>
 
 </html>
