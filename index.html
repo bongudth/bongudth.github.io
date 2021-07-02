@@ -222,6 +222,7 @@
         <a href="#" class="link-item-name" target="_blank">
           Link
         </a>
+        <div class="link-item-description">Link tada tada</div>
       </div>
       <div class="menu-separator">Separator</div>
       <div class="image-item">
@@ -242,12 +243,12 @@
     );
     const loading = JSON.parse(
       "[" +
-      '{ "type":"link", "name":"DSC Loading Spinner", "href":"http://loading.vndsc.com/" } ]'
+      '{ "type":"link", "name":"DSC Loading Spinner", "href":"http://loading.vndsc.com/", "description":"DSC loaders animation built with HTML & CSS" } ]'
     );
     const translate = JSON.parse(
       "[" +
-      '{ "type":"link", "name":"Slidev", "href":"https://github.com/slidevjs/docs" },' +
-      '{ "type":"link", "name":"Obsidian", "href":"https://github.com/obsidianmd/obsidian-docs" } ]'
+      '{ "type":"link", "name":"Slidev", "href":"https://github.com/slidevjs/docs", "description":"Maintainer for Vietnamese translations" },' +
+      '{ "type":"link", "name":"Obsidian", "href":"https://github.com/obsidianmd/obsidian-docs", "description":"Contributor for Vietnamese translations" } ]'
     );
     const game = JSON.parse(
       "[" +
@@ -310,14 +311,18 @@
         if (items[i].type === "link") {
           let linkitem = document.createElement("div");
           let linkitemname = document.createElement("a");
+          let linkitemdesc = document.createElement("div");
 
           linkitem.setAttribute("class", "link-item");
           linkitemname.setAttribute("class", "link-item-name");
+          linkitemdesc.setAttribute("class", "link-item-description");
 
           linkitemname.innerHTML = items[i].name;
           linkitemname.href = items[i].href;
+          linkitemdesc.innerHTML = items[i].description;
 
           linkitem.appendChild(linkitemname);
+          linkitem.appendChild(linkitemdesc);
           menu.appendChild(linkitem);
         }
         if (items[i].type === "image") {

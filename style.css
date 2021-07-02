@@ -376,7 +376,8 @@ figcaption {
 	grid-row-end: 4;
 	overflow-y: auto;
 }
-.text-item {
+.text-item,
+.link-item {
 	grid-column-start: 2;
 	grid-column-end: 2;
 	height: 100px;
@@ -390,7 +391,8 @@ figcaption {
 	background: #f3f3f3;
 	box-shadow: 0 0 20px 0 #cf9eaa;
 }
-.text-item-name {
+.text-item-name,
+.link-item-name {
 	grid-column-start: 1;
 	grid-column-end: 2;
 	grid-row-start: 1;
@@ -399,7 +401,8 @@ figcaption {
 	line-height: 70px;
 	text-align: start;
 }
-.text-item-description {
+.text-item-description,
+.link-item-description {
 	grid-column-start: 1;
 	grid-column-end: 2;
 	grid-row-start: 2;
@@ -416,24 +419,7 @@ figcaption {
 	line-height: 100px;
 	text-align: end;
 }
-.link-item {
-	height: 100px;
-	margin: 15px;
-	display: grid;
-	font-size: 1.2em;
-	border-radius: var(--radius);
-	padding: 0 25px;
-	background: #f3f3f3;
-	box-shadow: 0 0 20px 0 #cf9eaa;
-}
 .link-item-name {
-	grid-column-start: 1;
-	grid-column-end: 2;
-	grid-row-start: 1;
-	grid-row-end: 1;
-	font-weight: 900;
-	line-height: 70px;
-	text-align: start;
 	cursor: pointer;
 	color: inherit;
 }
