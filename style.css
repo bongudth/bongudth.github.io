@@ -239,7 +239,7 @@ figcaption {
 	grid-template-columns: 5% auto 5%;
 	grid-template-rows: 140px 80px auto 100px 30px;
 	height: -webkit-fill-available;
-	font-family: 'Handlee', cursive;
+	font-family: "Handlee", cursive;
 }
 .header {
 	grid-column-start: 2;

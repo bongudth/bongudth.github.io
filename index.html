@@ -11,7 +11,8 @@
   <link rel="shortcut icon" href="favicon.ico" type="image/icon">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Handlee&family=Sofia&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Handlee&family=Sofia&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
@@ -309,10 +310,10 @@
         if (items[i].type === "link") {
           let linkitem = document.createElement("div");
           let linkitemname = document.createElement("a");
-          
+
           linkitem.setAttribute("class", "link-item");
           linkitemname.setAttribute("class", "link-item-name");
-          
+
           linkitemname.innerHTML = items[i].name;
           linkitemname.href = items[i].href;
 
