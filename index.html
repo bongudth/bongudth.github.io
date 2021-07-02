@@ -218,7 +218,7 @@
       </div>
       <div class="menu-separator">Separator</div>
       <div class="link-item">
-        <a href="http://loading.vndsc.com/" class="link-item-name" target="_blank">
+        <a href="#" class="link-item-name" target="_blank">
           Link
         </a>
       </div>
@@ -226,7 +226,7 @@
       <div class="image-item">
         <div class="image-item-name">Image</div>
         <div class="image-item-description">Image tada tada</div>
-        <div class="image-item-image">2001</div>
+        <img src="#" class="image-item-image" />
       </div>
     </div>
   </div>
@@ -241,16 +241,16 @@
     );
     const loading = JSON.parse(
       "[" +
-      '{ "type":"link", "name":"DSC Loading Spinner", "href":"", "year":"" } ]'
+      '{ "type":"link", "name":"DSC Loading Spinner", "href":"http://loading.vndsc.com/" } ]'
     );
     const translate = JSON.parse(
       "[" +
-      '{ "type":"link", "name":"SLIDEV", "description":"translate document into Vietnamese", "year":"2021" },' +
-      '{ "type":"link", "name":"OBSIDIAN", "description":"translate document into Vietnamese", "year":"2021" } ]'
+      '{ "type":"link", "name":"Slidev", "href":"https://github.com/slidevjs/docs" },' +
+      '{ "type":"link", "name":"Obsidian", "href":"https://github.com/obsidianmd/obsidian-docs" } ]'
     );
     const game = JSON.parse(
       "[" +
-      '{ "type":"image", "name":"VALOR OF ARENA", "description":"Top Ishar 22th in the central of Vietnam", "image":"2020" } ]'
+      '{ "type":"image", "name":"VALOR OF ARENA", "description":"Top Ishar 22th in the central of Vietnam", "src":"./skills/ishar.PNG" } ]'
     );
 
     let sl = 0;
@@ -309,11 +309,12 @@
         if (items[i].type === "link") {
           let linkitem = document.createElement("div");
           let linkitemname = document.createElement("a");
-
+          
           linkitem.setAttribute("class", "link-item");
           linkitemname.setAttribute("class", "link-item-name");
-
+          
           linkitemname.innerHTML = items[i].name;
+          linkitemname.href = items[i].href;
 
           linkitem.appendChild(linkitemname);
           menu.appendChild(linkitem);
@@ -322,7 +323,7 @@
           let imageitem = document.createElement("div");
           let imageitemname = document.createElement("div");
           let imageitemdesc = document.createElement("div");
-          let imageitemimage = document.createElement("div");
+          let imageitemimage = document.createElement("img");
 
           imageitem.setAttribute("class", "image-item");
           imageitemname.setAttribute("class", "image-item-name");
@@ -331,7 +332,7 @@
 
           imageitemname.innerHTML = items[i].name;
           imageitemdesc.innerHTML = items[i].description;
-          imageitemimage.innerHTML = items[i].image;
+          imageitemimage.src = items[i].src;
 
           imageitem.appendChild(imageitemdesc);
           imageitem.appendChild(imageitemname);

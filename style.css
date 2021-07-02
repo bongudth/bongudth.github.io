@@ -420,7 +420,6 @@ figcaption {
 	height: 100px;
 	margin: 15px;
 	display: grid;
-	grid-template-rows: 50px 50px;
 	font-size: 1.2em;
 	border-radius: var(--radius);
 	padding: 0 25px;
@@ -431,14 +430,15 @@ figcaption {
 	grid-column-start: 1;
 	grid-column-end: 2;
 	grid-row-start: 1;
-	grid-row-end: 2;
+	grid-row-end: 1;
 	font-weight: 900;
 	line-height: 70px;
 	text-align: start;
 	cursor: pointer;
+	color: inherit;
 }
-.link-item-name:hover {
-	text-decoration: underline;
+.link-item-name:active {
+	color: inherit;
 }
 .image-item {
 	grid-column-start: 2;
@@ -453,6 +453,11 @@ figcaption {
 	padding-top: 10px;
 	background: #f3f3f3;
 	box-shadow: 0 0 20px 0 #cf9eaa;
+}
+.image-item img {
+	height: 250px;
+	width: auto;
+	object-fit: contain;
 }
 .image-item-name {
 	grid-column-start: 1;
