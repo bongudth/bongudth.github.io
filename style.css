@@ -234,10 +234,10 @@ figcaption {
 	position: absolute;
 	left: 0;
 	right: 0;
-	height: 100vh;
+	min-width: 400px;
 	display: grid;
 	grid-template-columns: 5% auto 5%;
-	grid-template-rows: 140px 80px auto 100px 30px;
+	grid-template-rows: 150px 100px 40px auto;
 	height: -webkit-fill-available;
 	font-family: "Handlee", cursive;
 }
@@ -245,7 +245,7 @@ figcaption {
 	grid-column-start: 2;
 	grid-column-end: 2;
 	grid-row-start: 1;
-	grid-row-end: 2;
+	grid-row-end: 1;
 	font-family: "Dancing Script", cursive;
 }
 .title {
@@ -255,60 +255,11 @@ figcaption {
 	font-size: 70px;
 	text-align: center;
 }
-.indicators {
-	grid-column-start: 2;
-	grid-column-end: 2;
-	grid-row-start: 5;
-	grid-row-end: 5;
-	display: grid;
-	grid-template-columns: 25% 25% 25% 25%;
-	grid-template-rows: 10px;
-}
-#i1,
-#i2,
-#i3,
-#i4 {
-	grid-column-start: 1;
-	grid-column-end: 1;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-#i2 {
-	grid-column-start: 2;
-	grid-column-end: 2;
-}
-#i3 {
-	grid-column-start: 3;
-	grid-column-end: 3;
-}
-#i4 {
-	grid-column-start: 4;
-	grid-column-end: 4;
-}
-.navi-indicator {
-	height: 4px;
-	width: 60px;
-	border-radius: 20px;
-	transition: width 0.2s;
-}
-#ni1 {
-	background: var(--icolor1);
-}
-#ni2 {
-	background: var(--icolor2);
-}
-#ni3 {
-	background: var(--icolor3);
-}
-#ni4 {
-	background: var(--icolor4);
-}
 .navi {
 	grid-column-start: 2;
 	grid-column-end: 2;
-	grid-row-start: 4;
-	grid-row-end: 4;
+	grid-row-start: 2;
+	grid-row-end: 2;
 	display: grid;
 	grid-template-columns: 25% 25% 25% 25%;
 	grid-template-rows: 100px;
@@ -317,11 +268,13 @@ figcaption {
 .navi-item2,
 .navi-item3,
 .navi-item4 {
-	grid-column-start: 1;
-	grid-column-end: 2;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+.navi-item1 {
+	grid-column-start: 1;
+	grid-column-end: 1;
 }
 .navi-item2 {
 	grid-column-start: 2;
@@ -337,7 +290,9 @@ figcaption {
 }
 .nav-button {
 	height: 70px;
-	width: 70px;
+	width: 60px;
+	border: none;
+	outline: none;
 	border-radius: 20px;
 	background: #f3f3f3;
 	box-shadow: 0 0 20px 0 #cf9eaa;
@@ -369,30 +324,89 @@ figcaption {
 	font-size: 0.9em;
 	font-weight: 300;
 }
+.indicators {
+	grid-column-start: 2;
+	grid-column-end: 2;
+	grid-row-start: 3;
+	grid-row-end: 3;
+	display: grid;
+	grid-template-columns: 25% 25% 25% 25%;
+}
+#i1,
+#i2,
+#i3,
+#i4 {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#i1 {
+	grid-column-start: 1;
+	grid-column-end: 1;
+}
+#i2 {
+	grid-column-start: 2;
+	grid-column-end: 2;
+}
+#i3 {
+	grid-column-start: 3;
+	grid-column-end: 3;
+}
+#i4 {
+	grid-column-start: 4;
+	grid-column-end: 4;
+}
+.navi-indicator {
+	height: 4px;
+	width: 60px;
+	border-radius: 20px;
+	transition: width 0.2s;
+}
+#ni1 {
+	background: var(--icolor1);
+}
+#ni2 {
+	background: var(--icolor2);
+}
+#ni3 {
+	background: var(--icolor3);
+}
+#ni4 {
+	background: var(--icolor4);
+}
 .menu {
 	grid-column-start: 2;
 	grid-column-end: 2;
-	grid-row-start: 2;
+	grid-row-start: 4;
 	grid-row-end: 4;
-	overflow-y: auto;
 }
 .text-item,
-.link-item {
+.link-item,
+.image-item {
 	grid-column-start: 2;
 	grid-column-end: 2;
-	height: 100px;
 	margin: 15px;
 	display: grid;
-	grid-template-columns: auto 200px;
-	grid-template-rows: 50px 50px;
 	font-size: 1.2em;
 	border-radius: var(--radius);
-	padding: 0 25px;
+	padding: 0 25px 10px 25px;
 	background: #f3f3f3;
 	box-shadow: 0 0 20px 0 #cf9eaa;
 }
+.text-item {
+	grid-template-columns: auto 200px;
+	grid-template-rows: 50px auto;
+}
+.link-item {
+	grid-template-columns: auto;
+	grid-template-rows: 50px auto;
+}
+.image-item {
+	grid-template-rows: 50px 50px 300px;
+}
 .text-item-name,
-.link-item-name {
+.link-item-name,
+.image-item-name {
 	grid-column-start: 1;
 	grid-column-end: 2;
 	grid-row-start: 1;
@@ -401,14 +415,22 @@ figcaption {
 	line-height: 70px;
 	text-align: start;
 }
+.link-item-name {
+	cursor: pointer;
+	color: inherit;
+}
+.link-item-name:active {
+	color: inherit;
+}
 .text-item-description,
-.link-item-description {
+.link-item-description,
+.image-item-description {
 	grid-column-start: 1;
 	grid-column-end: 2;
 	grid-row-start: 2;
 	grid-row-end: 2;
-	line-height: 50px;
 	text-align: start;
+	margin: 10px 0;
 }
 .text-item-year {
 	grid-column-start: 2;
@@ -419,49 +441,6 @@ figcaption {
 	line-height: 100px;
 	text-align: end;
 }
-.link-item-name {
-	cursor: pointer;
-	color: inherit;
-}
-.link-item-name:active {
-	color: inherit;
-}
-.image-item {
-	grid-column-start: 2;
-	grid-column-end: 2;
-	height: 400px;
-	margin: 15px;
-	display: grid;
-	grid-template-rows: 50px 50px 300px;
-	font-size: 1.2em;
-	border-radius: var(--radius);
-	padding-left: 30px;
-	padding-top: 10px;
-	background: #f3f3f3;
-	box-shadow: 0 0 20px 0 #cf9eaa;
-}
-.image-item img {
-	height: 250px;
-	width: auto;
-	object-fit: contain;
-}
-.image-item-name {
-	grid-column-start: 1;
-	grid-column-end: 2;
-	grid-row-start: 1;
-	grid-row-end: 2;
-	font-weight: 900;
-	line-height: 70px;
-	text-align: start;
-}
-.image-item-description {
-	grid-column-start: 1;
-	grid-column-end: 2;
-	grid-row-start: 2;
-	grid-row-end: 2;
-	line-height: 50px;
-	text-align: start;
-}
 .image-item-image {
 	grid-column-start: 1;
 	grid-column-end: 2;
@@ -469,6 +448,11 @@ figcaption {
 	grid-row-end: 3;
 	font-weight: 700;
 	text-align: center;
+}
+.image-item img {
+	height: 250px;
+	width: auto;
+	object-fit: contain;
 }
 .menu-separator {
 	grid-column-start: 2;
@@ -484,29 +468,7 @@ figcaption {
 	background: #f3f3f3;
 	box-shadow: 0 0 20px 0 #cf9eaa;
 }
-@media only screen and (min-width: 800px) {
-	.container {
-		grid-template-rows: 150px 100px 20px auto 20px;
-	}
-	.indicators {
-		grid-row-start: 3;
-		grid-row-end: 4;
-	}
-	.navi-indicator {
-		height: 4px;
-		width: 100%;
-		margin: 15px;
-	}
-	.navi {
-		grid-row-start: 2;
-		grid-row-end: 3;
-	}
-	.navi-item1,
-	.navi-item2,
-	.navi-item3,
-	.navi-item4 {
-		display: flex;
-	}
+@media only screen and (min-width: 768px) {
 	.nav-button {
 		height: 70px;
 		width: 100%;
@@ -528,9 +490,17 @@ figcaption {
 		font-size: 1.3em;
 		font-weight: 700;
 	}
-	.menu {
-		grid-row-start: 4;
-		grid-row-end: 4;
+}
+@media only screen and (max-width: 1024px) {
+	.text-item,
+	.link-item,
+	.image-item {
+		font-size: 0.9em;
+	}
+}
+@media only screen and (max-width: 430px) {
+	.text-item {
+		grid-template-columns: auto 100px;
 	}
 }
 button,
