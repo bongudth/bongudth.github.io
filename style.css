@@ -1,5 +1,6 @@
 body {
-	background-color: #ffe3e9;
+	background-color: #e96196;
+	background-image: linear-gradient(315deg, #e96196 0%, #ffffff 74%);
 	color: #eb7e7b;
 	text-align: center;
 }
@@ -298,6 +299,40 @@ figcaption {
 	box-shadow: 0 0 20px 0 #cf9eaa;
 	font-weight: 700;
 	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+	transition: 0.5s;
+}
+.nav-button:hover {
+	color: white;
+}
+.nav-button span {
+	position: absolute;
+	width: 25%;
+	height: 100%;
+	background-color: #e96196;
+	transform: translateY(150%);
+	border-radius: 50%;
+	left: calc((var(--n) - 1) * 25%);
+	transition: 0.5s;
+	transition-delay: calc((var(--n) - 1) * 0.1s);
+	z-index: -1;
+}
+.nav-button:hover span {
+	transform: translateY(0) scale(2);
+}
+.nav-button span:nth-child(1) {
+	--n: 1;
+}
+.nav-button span:nth-child(2) {
+	--n: 2;
+}
+.nav-button span:nth-child(3) {
+	--n: 3;
+}
+.nav-button span:nth-child(4) {
+	--n: 4;
 }
 #frontendbutton .navi-icon {
 	color: var(--icolor1);
