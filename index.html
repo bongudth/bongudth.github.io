@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>bongudth | stupid 🍄</title>
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.min.css">
   <link rel="shortcut icon" href="favicon.ico" type="image/icon">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -125,30 +125,30 @@
   <!-- END GALLERY -->
 
   <!-- START SKILL -->
-  <!-- <div class="container">
+  <div class="container">
     <div class="header">
-      <div class="title">Skills</div>
+      <div class="title">About me</div>
     </div>
     <div class="navi">
       <div class="navi-item1">
-        <button class="nav-button" id="frontendbutton">
+        <button class="nav-button" id="workbutton">
           <span></span><span></span><span></span><span></span>
           <div class="navi-icon"><i class="fas fa-code"></i></div>
-          <div class="navi-text">IT</div>
+          <div class="navi-text">Work</div>
         </button>
       </div>
       <div class="navi-item2">
-        <button class="nav-button" id="loadingbutton">
+        <button class="nav-button" id="productbutton">
           <span></span><span></span><span></span><span></span>
           <div class="navi-icon"><i class="fab fa-cuttlefish"></i></div>
-          <div class="navi-text">Loading</div>
+          <div class="navi-text">Product</div>
         </button>
       </div>
       <div class="navi-item3">
-        <button class="nav-button" id="translatebutton">
+        <button class="nav-button" id="translationbutton">
           <span></span><span></span><span></span><span></span>
           <div class="navi-icon"><i class="fas fa-comment-dots"></i></div>
-          <div class="navi-text">Translate</div>
+          <div class="navi-text">Translation</div>
         </button>
       </div>
       <div class="navi-item4">
@@ -174,41 +174,39 @@
       </div>
     </div>
     <div class="menu">
-      <div class="menu-separator">Separator</div>
+      <div class="menu-separator"></div>
       <div class="text-item">
-        <div class="text-item-name">Text</div>
-        <div class="text-item-description">Text tada tada</div>
-        <div class="text-item-year">2105</div>
+        <div class="text-item-name"></div>
+        <div class="text-item-description"></div>
+        <div class="text-item-year"></div>
       </div>
-      <div class="menu-separator">Separator</div>
+      <div class="menu-separator"></div>
       <div class="link-item">
-        <a href="#" class="link-item-name" target="_blank">
-          Link
-        </a>
-        <div class="link-item-description">Link tada tada</div>
+        <a href="#" class="link-item-name" target="_blank"></a>
+        <div class="link-item-description"></div>
       </div>
-      <div class="menu-separator">Separator</div>
+      <div class="menu-separator"></div>
       <div class="image-item">
-        <div class="image-item-name">Image</div>
-        <div class="image-item-description">Image tada tada</div>
+        <div class="image-item-name"></div>
+        <div class="image-item-description"></div>
         <img src="#" class="image-item-image" />
       </div>
     </div>
-  </div> -->
+  </div>
   <!-- END SKILL -->
 
   <script>
     // START SKILL
-    const frontend = JSON.parse(
+    const work = JSON.parse(
       "[" +
-      '{ "type":"text", "name":"DUT", "description":"Sophomore in Information of Technology at Danang University of Science and Technology", "year":"2019-2023" },' +
-      '{ "type":"text", "name":"DSC - DUT", "description":"Frontend Intern at Developer Student Club - Danang University of Science and Technology", "year":"2020-2021" } ]'
+      '{ "type":"text", "name":"DUT - UDN", "description":"Junior in Information of Technology at Danang University of Science and Technology", "year":"2019-present" },' +
+      '{ "type":"text", "name":"GDSC - DUT", "description":"Frontend Developer at Google Developer Student Club - Danang University of Science and Technology", "year":"2020-present" } ]'
     );
-    const loading = JSON.parse(
+    const product = JSON.parse(
       "[" +
-      '{ "type":"link", "name":"DSC LOADING SPINNER", "href":"http://loading.vndsc.com/", "description":"DSC loaders animation built with HTML & CSS" } ]'
+      '{ "type":"link", "name":"DSC LOADING SPINNER", "href":"http://product.vndsc.com/", "description":"DSC loaders animation built with HTML & CSS" } ]'
     );
-    const translate = JSON.parse(
+    const translation = JSON.parse(
       "[" +
       '{ "type":"link", "name":"SLIDEV", "href":"https://github.com/slidevjs/docs", "description":"Maintainer for Vietnamese translations" },' +
       '{ "type":"link", "name":"OBSIDIAN", "href":"https://github.com/obsidianmd/obsidian-docs", "description":"Contributor for Vietnamese translations" } ]'
@@ -220,9 +218,9 @@
 
     let sl = 0;
 
-    let frontendbutton = document.getElementById("frontendbutton");
-    let loadingbutton = document.getElementById("loadingbutton");
-    let translatebutton = document.getElementById("translatebutton");
+    let workbutton = document.getElementById("workbutton");
+    let productbutton = document.getElementById("productbutton");
+    let translationbutton = document.getElementById("translationbutton");
     let gamebutton = document.getElementById("gamebutton");
 
     let ni1 = document.getElementById("ni1");
@@ -230,17 +228,17 @@
     let ni3 = document.getElementById("ni3");
     let ni4 = document.getElementById("ni4");
 
-    frontendbutton.addEventListener("click", (e) => {
+    workbutton.addEventListener("click", (e) => {
       setIndicator(0);
-      populateItems(frontend);
+      populateItems(work);
     });
-    loadingbutton.addEventListener("click", (e) => {
+    productbutton.addEventListener("click", (e) => {
       setIndicator(1);
-      populateItems(loading);
+      populateItems(product);
     });
-    translatebutton.addEventListener("click", (e) => {
+    translationbutton.addEventListener("click", (e) => {
       setIndicator(2);
-      populateItems(translate);
+      populateItems(translation);
     });
     gamebutton.addEventListener("click", (e) => {
       setIndicator(3);
@@ -335,7 +333,7 @@
     });
 
     setIndicator(sl);
-    populateItems(frontend);
+    populateItems(work);
     // END SKILL
   </script>
 </body>
