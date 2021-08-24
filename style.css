@@ -3,6 +3,7 @@
 	--pink-icon: #c06e6b;
 	--pink-border: #cf9eaa;
 	--pink-shadow: #ff85a2;
+	--white-shadow: #f7d8d8;
 }
 
 body {
@@ -132,6 +133,7 @@ body {
 	justify-content: center;
 	align-content: center;
 	background-color: #fff;
+	box-shadow: 0 0 8px 0 var(--white-shadow);
 }
 #gallery .gallery .small-script p {
 	font-size: 14px;
@@ -155,6 +157,7 @@ body {
 }
 #gallery .gallery img {
 	object-fit: cover;
+	box-shadow: 0 0 8px 0 var(--white-shadow);
 }
 #gallery .gallery .small-image img {
 	width: 200px;
