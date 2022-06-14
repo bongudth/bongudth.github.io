@@ -862,7 +862,7 @@ textarea:focus { /* bongudth */
 #certificate .checkbox:not(:checked) + label { /* bongudth */
   position: relative; /* bongudth */
   cursor: pointer; /* bongudth */
-  margin: 0 auto; /* bongudth */
+  margin: 150px auto; /* bongudth */
   text-align: center; /* bongudth */
   margin-right: 6px; /* bongudth */
   margin-left: 6px; /* bongudth */
@@ -882,12 +882,15 @@ textarea:focus { /* bongudth */
     animation-play-state: paused; /* bongudth */
 } /* bongudth */
 #certificate .checkbox.scnd + label { /* bongudth */
-  background-image: url('./images/certi-gdsc.png'); /* bongudth */
+  background-image: url('./images/certi-data.png'); /* bongudth */
 } /* bongudth */
 #certificate .checkbox.thrd + label { /* bongudth */
-  background-image: url('./images/certi-gdsc-dut-front.png'); /* bongudth */
+  background-image: url('./images/certi-gdsc.png'); /* bongudth */
 } /* bongudth */
 #certificate .checkbox.foth + label { /* bongudth */
+  background-image: url('./images/certi-gdsc-dut-front.png'); /* bongudth */
+} /* bongudth */
+#certificate .checkbox.fith + label { /* bongudth */
   background-image: url('./images/certi-gdsc-dut-back.png'); /* bongudth */
 } /* bongudth */
 #certificate .checkbox:checked + label { /* bongudth */
@@ -914,7 +917,7 @@ textarea:focus { /* bongudth */
   top: 0; /* bongudth */
   left: 0; /* bongudth */
   display: flex; /* bongudth */
-	justify-content: center; /* bongudth */
+  justify-content: center; /* bongudth */
   width: 100%; /* bongudth */
   z-index: 100; /* bongudth */
   padding: 0; /* bongudth */
@@ -924,7 +927,7 @@ textarea:focus { /* bongudth */
 #certificate ul li { /* bongudth */
   position: absolute; /* bongudth */
   width: 54%; /* bongudth */
-  height: 500px; /* bongudth */
+  height: 650px; /* bongudth */
   display: block; /* bongudth */
   z-index: 100; /* bongudth */
   padding: 0; /* bongudth */
@@ -953,12 +956,15 @@ textarea:focus { /* bongudth */
   mix-blend-mode: difference; /* bongudth */
 } /* bongudth */
 #certificate ul li:nth-child(2) { /* bongudth */
-  background-image: url('./images/certi-gdsc.png'); /* bongudth */
+  background-image: url('./images/certi-data.png'); /* bongudth */
 } /* bongudth */
 #certificate ul li:nth-child(3) { /* bongudth */
-  background-image: url('./images/certi-gdsc-dut-front.png'); /* bongudth */
+  background-image: url('./images/certi-gdsc.png'); /* bongudth */
 } /* bongudth */
 #certificate ul li:nth-child(4) { /* bongudth */
+  background-image: url('./images/certi-gdsc-dut-front.png'); /* bongudth */
+} /* bongudth */
+#certificate ul li:nth-child(5) { /* bongudth */
   background-image: url('./images/certi-gdsc-dut-back.png'); /* bongudth */
 } /* bongudth */
 #certificate .checkbox.frst:checked ~ ul li:nth-child(1) { /* bongudth */
@@ -977,6 +983,11 @@ textarea:focus { /* bongudth */
   border-radius: 16px; /* bongudth */
 } /* bongudth */
 #certificate .checkbox.foth:checked ~ ul li:nth-child(4) { /* bongudth */
+  opacity: 1; /* bongudth */
+  pointer-events: auto; /* bongudth */
+  border-radius: 16px; /* bongudth */
+} /* bongudth */
+#certificate .checkbox.foth:checked ~ ul li:nth-child(5) { /* bongudth */
   opacity: 1; /* bongudth */
   pointer-events: auto; /* bongudth */
   border-radius: 16px; /* bongudth */
